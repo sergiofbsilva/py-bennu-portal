@@ -1,4 +1,4 @@
-from domain.models import Functionality, App, Theme, Host, MenuItem, MenuLink , AppMenu , CustomMenuItem
+from domain.models import Functionality, App, Theme, Host, MenuItem, MenuLink , AppMenu
 from django.contrib import admin
 
 class FunctionalityInline(admin.StackedInline):
@@ -15,4 +15,3 @@ admin.site.register(Host)
 admin.site.register(MenuItem)
 admin.site.register(MenuLink)
 admin.site.register(AppMenu)
-admin.site.register(CustomMenuItem)

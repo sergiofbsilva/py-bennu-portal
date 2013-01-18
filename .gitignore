@@ -1,2 +1,3 @@
-model.json
-dev.db
+*.json
+*.db
+*.pyc

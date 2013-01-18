@@ -51,8 +51,9 @@ class Command(NoArgsCommand):
     def createapp(self, jsonapp, host):
         title = jsonapp['title']
         description = jsonapp['description']
+        path = "/%s" % description['pt'].lower()
         accessExpression = jsonapp['accessExpression']
-        app = App.objects.create(title = title, description = description, accessExpression = accessExpression, host = host)
+        app = App.objects.create(title = title, description = description, accessExpression = accessExpression, host = host, path = path)
         for functionality in jsonapp['functionalities']:
             self.createfunctionality(functionality, app)
         app.save();
@@ -65,5 +66,5 @@ class Command(NoArgsCommand):
         except ObjectDoesNotExist:
             title = jsonfunc['title']
             accessExpression = jsonfunc['accessExpression']
-            func = Functionality.objects.create(path = path, title = title, accessExpression = accessExpression, app = app)
+            func = Functionality.objects.create(path = path, title = title, accessExpression = accessExpression, application = app)
         return func

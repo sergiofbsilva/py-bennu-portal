@@ -7,6 +7,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+AUTO_CATALOG = True
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -28,7 +30,14 @@ TIME_ZONE = 'Europe/Lisbon'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'pt-PT'
+
+ugettext = lambda s: s
+
+LANGUAGE_CODE='pt'
+LANGUAGES = (('pt',ugettext('Portuguese')),
+			 ('en', ugettext('English')))
+
+LOCALE_DIR = '/tmp/'
 
 SITE_ID = 1
 
@@ -119,7 +128,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+	'django_extensions',
     'domain',
+	'transdb',
+	'south'
 )
 
 # A sample logging configuration. The only tangible logging
