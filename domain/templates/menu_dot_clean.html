@@ -1,0 +1,37 @@
+<div id="container">
+    <div id="header">
+       <div id="logo">
+          <div id="text">
+             <h1>
+                .IST
+             </h1>
+             <p>
+                Aplicações Centrais do IST
+             </p>
+          </div>
+       </div>
+       <div class="clear"></div>
+       <div id="supportnav">
+       </div>
+       <div id="headerforms">
+       </div>
+    </div>
+    <div id="mainnav">
+       <ul class="mainnav">
+       	 {% for menu in menus %}
+          <li>
+          	<a href="{{menu.urlvalue}}"><span>{{menu.titlevalue}}</span></a>
+          </li>
+          {% endfor %}
+       </ul>
+       <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="container2">
+    	<div id="secondarynav"></div>
+    	<div id="container3">
+    		<div id="content">
+    		</div>
+    	</div>
+    </div>
+</div>

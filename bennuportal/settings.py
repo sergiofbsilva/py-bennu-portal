@@ -1,5 +1,11 @@
 # Django settings for bennuportal project.
 
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+HOST = "http://ashtray.ist.utl.pt:8001"
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -13,7 +19,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        #'ENGINE' : 'doj.backends.zxjdbc.sqlite3',
+		'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'dev.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -96,6 +103,11 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = [
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.static",
+]
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -128,10 +140,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-	'django_extensions',
+    'django_extensions',
     'domain',
-	'transdb',
-	'south'
+    'transdb',
+    'south',
+    'model_utils',
+	#'doj',
 )
 
 # A sample logging configuration. The only tangible logging

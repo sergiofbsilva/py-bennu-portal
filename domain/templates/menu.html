@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>menu</title>
+		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<h1>This is a menu</h1>
+		{% for app in apps %}
+		<div class="btn-group">
+  			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    			{{ app.title }}
+    			<span class="caret"></span>
+  			</a>
+   			<ul class="dropdown-menu">
+   				{% for menu in app.menus.all %}
+   					{% for link in menu.links.all %}
+   					<li>
+   						<a href="{{link.urlvalue}}">{{link.titlevalue}}</a>
+   					</li>
+   					{% endfor %}	
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/static/bootstrap/js/bootstrap.js"></script>
+	</body>
+</html>

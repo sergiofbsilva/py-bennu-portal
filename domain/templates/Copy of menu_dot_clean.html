@@ -1,0 +1,39 @@
+<div id="container">
+    <div id="header">
+       <div id="logo">
+          <div id="text">
+             <h1>
+                .IST
+             </h1>
+             <p>
+                Aplicações Centrais do IST
+             </p>
+          </div>
+       </div>
+       <div class="clear"></div>
+       <div id="supportnav">
+       </div>
+       <div id="headerforms">
+       </div>
+    </div>
+    <div id="mainnav">
+       <ul class="mainnav">
+       {% for app in apps %}
+       	 {% for menu in app.menus.all %}
+          <li>
+          	<a href="{{app.path}}"><span>{{menu.title}}</span></a>
+          </li>
+          {% endfor %}
+       {% endfor %}
+       </ul>
+       <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="container2">
+    	<div id="secondarynav"></div>
+    	<div id="container3">
+    		<div id="content">
+    		</div>
+    	</div>
+    </div>
+</div>

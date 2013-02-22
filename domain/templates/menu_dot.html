@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-PT" xml:lang="pt-PT">
+   <head>
+      <title>
+         .IST - Aplicações Centrais do IST
+      </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!--[if IE 8]>
+      <meta http-equiv="X-UA-Compatible" content="IE=8" />
+      <![endif]-->
+      <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+      
+      <link rel="shortcut icon" type="image/x-icon" href="/home.do?method=favico&amp;virtualHostId=395136991834" />
+      <link rel="stylesheet" type="text/css" href="{{hostname}}/static/test/CSS/theme_test/screen.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="{{hostname}}/static/test/CSS/theme_test/print.css" media="print" />
+      <link rel="stylesheet" type="text/css" href="{{hostname}}/static/test/head.css" />
+      <script src="{{hostname}}/static/test/javaScript/jquery.js" type="text/javascript"></script>
+      <script src="{{hostname}}/static/test/javaScript/jquery-ui.js" type="text/javascript"></script>
+      <script src="{{hostname}}/static/test/javaScript/jquery.form.js" type="text/javascript"></script>
+      <script src="{{hostname}}/static/test/javaScript/scriptingUtils.js" type="text/javascript"></script>
+      <script src="{{hostname}}/static/test/javaScript/liveValidation.js" type="text/javascript"></script> 
+   </head>
+   <body class="top">
+      <div id="container">
+         <div id="header">
+            <div id="logo">
+               <img src="/"/>
+               <div id="text">
+                  <h1>
+                     .IST
+                  </h1>
+                  <p>
+                     Aplicações Centrais do IST
+                  </p>
+               </div>
+            </div>
+            <div class="clear"></div>
+            <div id="supportnav">
+            </div>
+            <div id="headerforms">
+            </div>
+         </div>
+         <div id="mainnav">
+            <ul class="mainnav">
+            {% for app in apps %}
+               <li>
+               	<a href="{{app.path}}"><span>{{app.title}}</span></a>
+               </li>
+            {% endfor %}
+            </ul>
+            <div class="clear"></div>
+         </div>
+         <div class="clear"></div>
+         <div id="container2">
+         	<div id="secondarynav"></div>
+         	<div id="container3">
+         		<div id="content">
+         		</div>
+         	</div>
+         </div>
+     </div>
+   </body>
+</html>
